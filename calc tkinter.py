@@ -1,197 +1,160 @@
-import tkinter
 from tkinter import *
+
 val = ""
-A = 0
-operator = ""
 
-def result():
-    global A
-    global operator
-    global val
-    val2 = (val)
-    if(operator=="+"):
-        x = int((val2.split("+")[1]))
-        res = A + x
-        data.set(res)
-        
-    elif(operator=="-"):
-        x = int((val2.split("-")[1]))
-        res = A - x
-        data.set(res)
-        
-    elif(operator=="*"):
-        x = int((val2.split("*")[1]))
-        res = A * x
-        data.set(res)
-        
-    elif(operator=="/"):
-        x = int((val2.split("/")[1]))
-        res = A/x
-        data.set(res)
+def btn1():
+	global val
+	val = val+"1"
+	data.set(val)
+    
+def btn2():
+	global val
+	val = val+"2"
+	data.set(val)
+    
+def btn3():
+	global val
+	val = val+"3"
+	data.set(val)
+    
+def btn4():
+	global val
+	val = val+"4"
+	data.set(val)
+    
+def btn5():
+	global val
+	val = val+"5"
+	data.set(val)
+    
+def btn6():
+	global val
+	val = val+"6"
+	data.set(val)
+    
+def btn7():
+	global val
+	val = val+"7"
+	data.set(val)
+    
+def btn8():
+	global val
+	val = val+"8"
+	data.set(val)
+    
+    
+def btn9():
+	global val
+	val = val+"9"
+	data.set(val)
+    
+    
+def btn0():
+	global val
+	val = val+"0"
+	data.set(val)
+    
+    
+def btnp():
+	global val
+	val = val+"+"
+	data.set(val)
+    
+    
+def btnm():
+	global val
+	val = val+"-"
+	data.set(val)
+    
+    
+def btnmul():
+	global val
+	val = val+"*"
+	data.set(val)
+    
+def btndiv():
+	global val
+	val = val+"/"
+	data.set(val)
+    
+def clear():
+	global val
+	val = ""
+	data.set(val)
+    
+def eq():
+	global val
+	total = str(eval(val))
+	data.set(total)
 
-        
-    
-        
-        
-def btn1_click():
-    global val
-    val = val + "1"
-    data.set(val)
+w = Tk()
+w.geometry("250x250")
+w.resizable(0,0)
 
-def btn2_click():
-    global val
-    val = val + "2"
-    data.set(val)
-
-def btn3_click():
-    global val
-    val = val + "3"
-    data.set(val)
-
-def btnadd_click():
-    global A
-    global operator
-    global val
-    A = int(val)
-    operator="+"
-    val = val + "+"
-    data.set(val)
-    
-def btn4_click():
-    global val
-    val = val + "4"
-    data.set(val)
-    
-def btn5_click():
-    global val
-    val = val + "5"
-    data.set(val)
-    
-def btn6_click():
-    global val
-    val = val + "6"
-    data.set(val)
-    
-def btnsub_click():
-    global A
-    global operator
-    global val
-    A = int(val)
-    val = val + "-"
-    operator = "-"
-    data.set(val)
-    
-def btn7_click():
-    global val
-    val = val + "7"
-    data.set(val)
-    
-def btn8_click():
-    global val
-    val = val + "8"
-    data.set(val)
-    
-def btn9_click():
-    global val
-    val = val + "9"
-    data.set(val)
-    
-def btnmul_click():
-    global A
-    global operator
-    global val
-    A = int(val)
-    val = val + "*"
-    operator = "*"
-    data.set(val)
-    
-def btnC_click():
-    global val
-    val = ""
-    data.set(val)
-    
-def btn0_click():
-    global val
-    val = val + "0"
-    data.set(val)
-    
-    
-def btndiv_click():
-    global A
-    global operator
-    global val
-    A = int(val)
-    operator = "/"
-    val = val + "/"
-    data.set(val)
-    
- 
-window = Tk()
-window.title("Simple Calculator")
 data = StringVar()
-lbl = Label(window,text="",font=("Verdana",22),textvariable = data, background="#ffffff")
+lbl = Label(w,text="",textvariable=data)
 lbl.pack(expand=True,fill="both")
 
+row1 = Frame(w)
+row1.pack(expand=True,fill="both")
 
-btnrow1 = Frame(window)
-btnrow1.pack(expand=True,fill="both")
+row2 = Frame(w)
+row2.pack(expand=True,fill="both")
 
-btnrow2 = Frame(window)
-btnrow2.pack(expand=True,fill="both")
+row3 = Frame(w)
+row3.pack(expand=True,fill="both")
 
-btnrow3 = Frame(window)
-btnrow3.pack(expand=True,fill="both")
+row4 = Frame(w)
+row4.pack(expand=True,fill="both")
 
-btnrow4 = Frame(window)
-btnrow4.pack(expand=True,fill="both")
 
-btn1 = Button(btnrow1,text="1",font=("Verdana",22),relief=GROOVE,border=0,command = btn1_click)
+btn1 = Button(row1,text="1",command=btn1)
 btn1.pack(side=LEFT,expand=True,fill="both")
 
-btn2 = Button(btnrow1,text="2",font=("Verdana",22),relief=GROOVE,border=0,command=btn2_click)
+btn2 = Button(row1,text="2",command=btn2)
 btn2.pack(side=LEFT,expand=True,fill="both")
 
-btn3 = Button(btnrow1,text="3",font=("Verdana",22),relief=GROOVE,border=0,command = btn3_click)
+btn3 = Button(row1,text="3",command=btn3)
 btn3.pack(side=LEFT,expand=True,fill="both")
 
-btnadd = Button(btnrow1,text="+",font=("Verdana",22),relief=GROOVE,border=0,command=btnadd_click)
-btnadd.pack(side=LEFT,expand=True,fill="both")
+btnp = Button(row1,text="+",command=btnp)
+btnp.pack(side=LEFT,expand=True,fill="both")
 
-btn4 = Button(btnrow2,text="4",font=("Verdana",22),relief=GROOVE,border=0,command=btn4_click)
+btn4 = Button(row2,text="4",command=btn4)
 btn4.pack(side=LEFT,expand=True,fill="both")
 
-btn5 = Button(btnrow2,text="5",font=("Verdana",22),relief=GROOVE,border=0,command=btn5_click)
+btn5 = Button(row2,text="5",command=btn5)
 btn5.pack(side=LEFT,expand=True,fill="both")
 
-btn6 = Button(btnrow2,text="6",font=("Verdana",22),relief=GROOVE,border=0,command=btn6_click)
+btn6 = Button(row2,text="6",command=btn6)
 btn6.pack(side=LEFT,expand=True,fill="both")
 
-btnsub = Button(btnrow2,text="-",font=("Verdana",22),relief=GROOVE,border=0,command=btnsub_click)
-btnsub.pack(side=LEFT,expand=True,fill="both")
+btnm = Button(row2,text="-",command=btnm)
+btnm.pack(side=LEFT,expand=True,fill="both")
 
-btn7 = Button(btnrow3,text="7",font=("Verdana",22),relief=GROOVE,border=0,command=btn7_click)
+btn7 = Button(row3,text="7",command=btn7)
 btn7.pack(side=LEFT,expand=True,fill="both")
 
-btn8 = Button(btnrow3,text="8",font=("Verdana",22),relief=GROOVE,border=0,command=btn8_click)
+btn8 = Button(row3,text="8",command=btn8)
 btn8.pack(side=LEFT,expand=True,fill="both")
 
-btn9 = Button(btnrow3,text="9",font=("Verdana",22),relief=GROOVE,border=0,command=btn9_click)
+btn9 = Button(row3,text="9",command=btn9)
 btn9.pack(side=LEFT,expand=True,fill="both")
 
-btnmul = Button(btnrow3,text="*",font=("Verdana",22),relief=GROOVE,border=0,command=btnmul_click)
+btnmul = Button(row3,text="*",command=btnmul)
 btnmul.pack(side=LEFT,expand=True,fill="both")
 
-btnC = Button(btnrow4,text="C",font=("Verdana",22),relief=GROOVE,border=0,command=btnC_click)
-btnC.pack(side=LEFT,expand=True,fill="both")
+btnc = Button(row4,text="C",command=clear)
+btnc.pack(side=LEFT,expand=True,fill="both")
 
-btn0 = Button(btnrow4,text="0",font=("Verdana",22),relief=GROOVE,border=0,command=btn0_click)
+btn0 = Button(row4,text="0",command=btn0)
 btn0.pack(side=LEFT,expand=True,fill="both")
 
-btneq = Button(btnrow4,text="=",font=("Verdana",22),relief=GROOVE,border=0,command=result)
+btneq = Button(row4,text="=",command=eq)
 btneq.pack(side=LEFT,expand=True,fill="both")
 
-btndiv = Button(btnrow4,text="/",font=("Verdana",22),relief=GROOVE,border=0,command=btndiv_click)
+btndiv = Button(row4,text="/",command=btndiv)
 btndiv.pack(side=LEFT,expand=True,fill="both")
 
+w.mainloop()
 
-window.mainloop()
